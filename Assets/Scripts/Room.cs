@@ -21,32 +21,29 @@ public class Room : MonoBehaviour
     private int y;
  
     private Vector2 selectedPosition;
-    private Dictionary<Vector2, GameObject> grid;
+    private Dictionary<Vector2, Tile> grid;
 
     public Action<Vector2> onSelectedPositionUpdated;
 
+    [SerializeField] private Tile _tilePrefab;
+
     void Awake()
     {
+        Debug.Log("Test!!!");
+        Console.WriteLine("Hello!!!");
         // Placeholder generation algorithm
         x = 9;
         y = 9;
-        grid = new Dictionary<Vector2, GameObject>();
+        grid = new Dictionary<Vector2, Tile>();
         for (int i=0;i<x;i++)
         {
-            //grid[i] = gridRow
             for (int j=0;j<y;j++)
             {
-                GameObject tileGameObject = new GameObject();
-                tileGameObject.AddComponent<Tile>();
-                tileGameObject.transform.SetParent(gameObject.transform);
-                tileGameObject.transform.localPosition = new Vector2(i,j);
-                tileGameObject.AddComponent<SpriteRenderer>();
-                tileGameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Square");
-                tileGameObject.AddComponent<Collider>();
+                var spawnedTile = Instantiate(_tilePrefab, new Vector3(i, j), Quaternion.identity);
+                spawnedTile.name = $"Tile {i} {j}";
+                spawnedTile.Init();
 
-                grid[new Vector2(i, j)] = tileGameObject;
-
-                tileGameObject.GetComponent<Tile>().onTileClicked += UpdateSelectedPosition;
+                grid[new Vector2(i, j)] = spawnedTile;
             }
         }
     }

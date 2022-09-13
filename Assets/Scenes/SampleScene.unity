@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5a82d178025f445ad16e0eb26b3162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tilePrefab: {fileID: 3635694401312949828, guid: 1c8fe0044a46a4e6ba822d40f3b64ebb, type: 3}
 --- !u!4 &427115464
 Transform:
   m_ObjectHideFlags: 0
@@ -326,6 +327,7 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
@@ -402,6 +404,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6394920096730612498, guid: 963cee633ec4071448c2e4970dcdd26e, type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 427115463}
     - target: {fileID: 1357308717587310060, guid: 963cee633ec4071448c2e4970dcdd26e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -424,15 +430,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082439581339301382, guid: 963cee633ec4071448c2e4970dcdd26e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5082439581339301382, guid: 963cee633ec4071448c2e4970dcdd26e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5082439581339301382, guid: 963cee633ec4071448c2e4970dcdd26e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5082439581339301382, guid: 963cee633ec4071448c2e4970dcdd26e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -463,5 +469,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
+    - {fileID: 0}
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 963cee633ec4071448c2e4970dcdd26e, type: 3}

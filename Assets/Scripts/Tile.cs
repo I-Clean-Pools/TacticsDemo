@@ -2,25 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
     public Action<Vector2> onTileClicked;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void Init() {
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnMouseEnter() {
+
+        Debug.Log("OnMouseEnter!!");
     }
 
     void OnMouseDown() {
-        Console.WriteLine("ayyy I'm OnMouseDowning here(tile)");
+        Debug.Log("Hello!!");
         onTileClicked?.Invoke(this.transform.localPosition);
     }
 }
